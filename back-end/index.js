@@ -12,9 +12,6 @@ let userBackup = {
   avatar:""
 }
 
-server.get('/users', (req, res) => {
-    res.send(users);
-  });
 
 server.post('/sign-up', (req, res) => {
     const user = req.body; 
@@ -34,7 +31,7 @@ server.get('/tweets', (req, res) => {
   if(tweets.length<=10){
     res.send(tweets);
   }else {
-    const tweetsReturn = tweets.slice(tweets.length-11, tweets.length);
+    const tweetsReturn = tweets.slice(tweets.length-10, tweets.length);
     res.send(tweetsReturn);
   }
 
